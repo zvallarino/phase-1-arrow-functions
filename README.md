@@ -97,7 +97,7 @@ add(2,3) //=> 5
 ```
 
 It seems like it wouldn't work, but it does. This builds on the syntax of the _function expression_
-just covered. The arrow syntax just lets you cut out a some typing.
+just covered. The arrow syntax just lets you cut out some typing.
 
 `add` is the name to which the following _anonymous function_ is assigned, same
 as in the previous section:
@@ -106,18 +106,29 @@ as in the previous section:
 (parameter1, parameter2) => parameter1 + parameter2
 ```
 
-This is a very short function! It adds `parameter1` and `parameter2`.  Without
-any braces, arrow functions automatically return the result of the last
-expression.
+This is a very short function! It defines two parameters inside of `()`. It defines
+a function body after the "arrow" (`=>`). If the _function body_ is only one line,
+the function **automatically returns** the value of the single evaluated expression.
+In this function body, it returns the result of adding adds `parameter1` and
+`parameter2`.
 
-Functions like this are very common in JavaScript's iterator methods.
+It is equivalent to:
+
+```js
+function (parameter1, parameter2) {
+  return parameter1 + parameter2;
+}
+```
+
+Functions like this are very common in JavaScript's iterator methods (more on them later on in
+this document).
 
 If your arrow function has only one parameter, the `()` become optional around the parameter:
 
 ```js
-let twoAdder = x => x + 2;
-// is the same as
 let twoAdder = (x) => x + 2;
+// is the same as
+let twoAdder = x => x + 2;
 ```
 Almost all developers will drop the parentheses in this case. 
 
