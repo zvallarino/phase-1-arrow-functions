@@ -12,7 +12,9 @@ function foo() {
 ```
 
 But JavaScript has two other ways to write functions: the _function expression_
-and the _arrow function_. None of these is more correct or better than others.
+and the _arrow function_. None of these is more correct or better than others,
+but learning to recognize the correct situation in which to use each is a useful
+skill for a programmer.
 
 ## Learning Goals
 
@@ -46,13 +48,13 @@ is is by analogy.
 let sum = 1 + 1
 ```
 
-EVALUATE the expression `1 + 1`, RETURNING `2` and ASSIGN it to the variable `sum`
+Evaluate the expression `1 + 1`, returning `2` and assign it to the variable `sum`
 
 ```js
 let difference = 10 - 1;
 ```
 
-EVALUATE the expression `10 - 1`, RETURNING `9` and ASSIGN it to the variable
+Evaluate the expression `10 - 1`, returning `9` and assign it to the variable
 `difference`.
 
 ```js
@@ -61,8 +63,8 @@ let foo = function() {
 }
 ```
 
-EVALUATE the expression `function() { return 'bar' }`, RETURNING a thing that
-can be called and ASSIGN it to the variable `foo`. The function expression
+Evaluate the expression `function() { return 'bar' }`, returning a thing that
+can be called and assign it to the variable `foo`. The function expression
 (again, the thing to the right of `=`) is known as "an anonymous
 function." It doesn't have a name associated with it like you see in a
 _function declaration_.
@@ -74,12 +76,15 @@ reasonable purposes, named `foo`.
 
 There are a few subtle differences between _function declarations_ and
 _function expressions_, but they are very minute. Neither is really better than
-the other. JavaScript supports variety. Neither is better or more preferred
-than the other.
+the other. JavaScript supports variety, and you can use whichever one you
+prefer. In advanced usage (in React, in particular) some subtle differences
+will become important, but for the time being you don't need to consider those
+differences.
 
 Try thinking about the following code. Will this work? Does it work? Try to
 explain to yourself what's happening using the words "anonymous function" and
-"`call`." If you need help, see IIFE in the Resources section below.
+"`call`." If you need help, see [Immediately Invoked Function Expression][IIFE]
+in the Resources section below.
 
 ```js
 (function() { console.log("Hello world") })()
@@ -120,8 +125,13 @@ function (parameter1, parameter2) {
 }
 ```
 
-Functions like this are very common in JavaScript's iterator methods (more on them later on in
-this document).
+Functions like this are very common in JavaScript's _iterator_ methods. An
+iterator is a method that allows you to deal with a set of data one at a time.
+For example, if you had a group of student's essays, you could only grade
+them one at a time. An iterator method would allow you to do just that.
+
+You'll be working with iterator methods a lot in later exercises in this
+module.
 
 If your arrow function has only one parameter, the `()` become optional around the parameter:
 
@@ -130,7 +140,7 @@ let twoAdder = (x) => x + 2;
 // is the same as
 let twoAdder = x => x + 2;
 ```
-Almost all developers will drop the parentheses in this case. 
+Almost all developers will drop the parentheses in this case.
 
 If we need to do more work than return a mere single expression, we'll need
 `{}` to wrap the multiple lines of code, and we'll have to declare a
@@ -148,11 +158,11 @@ sum(1,2) //=> 3
 ## Describe Situations Where Arrow Functions Are Used
 
 As a preview of advanced iteration in JavaScipt, we'll show the `.map()`
-function.  `.map()` iterates through one `Array`, passes each element to a
+method.  `.map()` iterates through one `Array`, passes each element to a
 function that's passed in as an argument, takes that functions return value, and
 stacks it into a new array. Don't worry if you don't completely follow
 everything that goes on here - we haven't covered iterators quite yet, so it's
-totally ok if the finer details feel a bit murky. 
+totally ok if the finer details feel a bit murky.
 
 ```js
 const nums = [1,2,3];
@@ -175,12 +185,9 @@ Or billing software:
 lapsedUserAccounts.map( u => sendBillTo(u.address) );
 ```
 
-In a subsequent lesson, we'll show the power of arrow functions with other
-iterator methods.
-
 ## Instructions
 You are going to write several methods. Write your code in the `index.js` file.
-Let the tests guide you through the process. 
+Let the tests guide you through the process.
 
 
 ## Conclusion
@@ -191,9 +198,12 @@ declaration we've been using. Arrow functions excel when a simple change or
 operation needs to be used repeatedly. But they're certainly used to write long,
 full functions too! As you continue through the course, you'll see all three
 methods used to write functions, and develop a sense of when to use each
-yourself. 
+yourself.
 
 ## Resources
 
-- [MDN: Arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
-- [IIFE](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)
+* [MDN: Arrow Functions][Arrow functions]
+* [IIFE][]
+
+[Arrow functions]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
+[IIFE]: https://developer.mozilla.org/en-US/docs/Glossary/IIFE
